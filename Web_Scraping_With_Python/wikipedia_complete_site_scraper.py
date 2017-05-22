@@ -1,8 +1,3 @@
-# Scraping Entire Sites
-
-When scraping entire sites for content and links you have to be mindful of the fact that many sites have a repetitive link structure.  So If you have a scraping procedure that does not account for this, the overhead for your program might be extreme and it will crash.  The basic solution for addressing this is to have a list of new links that the program appends to whenever one is found.  This list is checked when a link is reached, and if it is not new, it is skipped over.  
-
-```python
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
@@ -19,7 +14,8 @@ def getLinks(pageUrl):
     print(bsObj.find(id ="mw-content-text").findAll("p")[0])
     print(bsObj.find(id="ca-edit").find("span").find("a").attrs['href'])
   except AttributeError:
-    print('This page is missing something, Moving onto link search)
+    print('This page is missing something, Moving onto link search')
+
   for link in bsObj.findAll("a", href=re.compile("^(/wiki/)")):
     if 'href' in link.attrs:
       if link.attrs['href'] not in pages:
@@ -28,7 +24,5 @@ def getLinks(pageUrl):
         print(newPage)
         pages.add(newPage)
         getLinks(newPage)
-getLinks("")
-```
 
-### Collecting Data Across and Entire Site
+getLinks("")
