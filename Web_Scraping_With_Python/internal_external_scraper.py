@@ -39,16 +39,19 @@ def getAllExternalLinks(siteUrl):
     externalLinks = getExternalLinks(bsObj, splitAddress(siteUrl)[0])
     for link in externalLinks:
         if link not in allExtLinks:
+            print('Found a new External link: ' + link)
             allExtLinks.add(link)
-            print(link)
+            print(allExtLinks)
     for link in internalLinks:
         if link not in allIntLinks:
-            print('About to get link: ' + link)
+            print('Found a new Internal Link: ' + link)
             allIntLinks.add(link)
+            print(allIntLinks)
             getAllExternalLinks(link)
 
 def splitAddress(address):
     addressParts = address.replace("http://", "").split("/")
+    print(addressParts)
     return addressParts
 
 def getRandomExternalLink(startingPage):
