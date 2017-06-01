@@ -25,3 +25,30 @@ MongoDB attempts to find the drop off point where more features drastically redu
 
 **Question:  
 When scaling out horizontally (adding more servers to contain your data), what are the problems that arise as you go from, say, 1 commodity server to a few dozen?**  
+
+**Question:
+What causes significant problems for SQL when you attempt to scale horizontally (to multiple servers)**
+
+So what does this mean? -> We need a different data model.
+
+MongoDB uses a Document-Orientated Model (mimicking JSON)
+
+JSON typically looks like 'code' (think JS objects) but JSON is language agnostic/independent, and maps nicely to mainstream programming languages.
+
+**Question:
+What are some of the advantages of representing our data using a JSON-like format?**
+
+#### JSON (BSON)
+
+**Question:  
+How many data types in JSON?**  
+
+6 Data Types:
+  * strings
+  * numbers
+  * booleans
+  * null
+  * arrays
+  * object/documents
+
+##### Types
