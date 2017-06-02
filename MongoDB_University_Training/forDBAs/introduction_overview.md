@@ -52,3 +52,44 @@ How many data types in JSON?**
   * object/documents
 
 ##### Types
+
+### Operators
+
+#### Querying
+* $gte
+* $gt
+* $lt
+* $lte
+* $or
+* $not
+* $nin
+* $in
+* $type
+
+
+#### Updating
+* $inc
+* $set
+* $addToSet
+
+
+**Reaching into Nested Documents**
+{
+  x: {
+    a:1, b:33
+  }
+}
+where a=1 inside the x document?
+use 'dot' notation
+
+`  db.collections.find("x.a":1)  `
+
+#### Where We Are Going
+
+1. Framework
+2. Context
+3. CRUD Operations
+4. Administrative Commands
+5. Performance (singular server)
+6. Deployment options
+  *
