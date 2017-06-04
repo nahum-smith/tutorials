@@ -14,3 +14,7 @@
 ### CRUD- (C)reate (R)ead (U)pdate (D)elete
 
 always work with the global variable ` db `
+
+### Pymongo
+
+mongod
